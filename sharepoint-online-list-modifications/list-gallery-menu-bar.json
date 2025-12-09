@@ -1,62 +1,50 @@
 {
     "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/tile-formatting.schema.json",
-    "height": 103,
-    "width": 254,
+    "height": 52,
+    "width": 1000,
     "hideSelection": true,
     "fillHorizontally": true,
     "formatter": {
-        "elmType": "div",
-        "attributes": {
-            "class": "sp-card-container"
-        },
-        "children": [
+      "elmType": "div",
+      "style": {
+        "display": "flex",
+        "align-items": "stretch",
+        "width": "100%",
+        "height": "100%",
+        "padding": "4px",
+        "box-sizing": "border-box"
+      },
+      "children": [
+        {
+          "elmType": "button",
+          "customRowAction": {
+            "action": "defaultClick"
+          },
+          "attributes": {
+            "class": "ms-Button ms-Button--primary",
+            "title": "[$Title]"
+          },
+          "style": {
+            "width": "100%",
+            "border-radius": "20px",
+            "border": "none",
+            "cursor": "pointer",
+            "text-align": "left",
+            "padding": "10px 16px",
+            "box-sizing": "border-box",
+            "outline": "none"
+          },
+          "children": [
             {
-                "elmType": "div",
-                "attributes": {
-                    "class": "sp-card-defaultClickButton"
-                },
-                "customRowAction": {
-                    "action": "defaultClick"
-                }
-            },
-            {
-                "elmType": "div",
-                "attributes": {
-                    "class": "ms-bgColor-white sp-css-borderColor-neutralLight sp-card-borderHighlight sp-card-subContainer"
-                },
-                "children": [
-                    {
-                        "elmType": "p",
-                        "attributes": {
-                            "title": "[$Title]",
-                            "class": "ms-fontColor-neutralPrimary sp-card-content sp-card-highlightedContent",
-                            "role": "heading",
-                            "aria-level": "3"
-                        },
-                        "txtContent": "=if ([$Title] == '', '-', [$Title])"
-                    }
-                ]
-            },
-            {
-                "elmType": "div",
-                "attributes": {
-                    "class": "sp-card-lastTextColumnContainer"
-                },
-                "children": [
-                    {
-                        "elmtype": "p",
-                        "attributes": {
-                            "title": "[$Body]",
-                            "class": "ms-fontColor-neutralPrimary sp-card-content sp-card-multiline"
-                        },
-                        "txtContent": "=if ([$Body] == '', '-', [$Body])",
-                        "style": {
-                            "-webkit-line-clamp": "2",
-                            "height": "40px"
-                        }
-                    }
-                ]
+              "elmType": "span",
+              "attributes": {
+                "class": "ms-Button-label"
+              },
+              "txtContent": "=if([$Title] == '', '-', [$Title])"
             }
-        ]
+          ]
+        }
+      ]
     }
-}
+  }
+  
